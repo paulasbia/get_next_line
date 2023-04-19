@@ -6,7 +6,7 @@
 /*   By: pde-souz <pde-souz@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 09:52:45 by pde-souz          #+#    #+#             */
-/*   Updated: 2023/04/19 12:56:23 by pde-souz         ###   ########.fr       */
+/*   Updated: 2023/04/19 13:53:39 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,16 @@ char	*get_next_line(int fd)
 {
 	char	*str;
 	char	buffer[BUFFER_SIZE];
+	int		c;
 
+	c = read(fd, buffer, BUFFER_SIZE);
 	str = 0;
 	printf("teste na gnl \n");
-	while (read(fd, buffer, BUFFER_SIZE) > 0)
+	while (c > 0)
 	{
 		printf("vai para strjoin\n\n\n");
-		str = ft_strjoin(str, buffer);
+		str = ft_strjoin(str, buffer, c);
+        c = read(fd, buffer, BUFFER_SIZE);
 	}
 	return (str);
 }

@@ -6,7 +6,7 @@
 /*   By: pde-souz <pde-souz@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 10:23:54 by pde-souz          #+#    #+#             */
-/*   Updated: 2023/04/19 13:08:21 by pde-souz         ###   ########.fr       */
+/*   Updated: 2023/04/19 13:54:53 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,13 @@ int	ft_strlen(char *str)
 	return (i);
 }
 
-char	*ft_strjoin(char *s1, char *s2)
+char	*ft_strjoin(char *s1, char *s2, int c)
 {
 	char	*nstr;
 	char	*ret;
+	int		i;
 
+	i = 0;
 	nstr = (char *)malloc(sizeof(char) * ft_strlen(s1) + ft_strlen(s2) + 1);
 	ret = nstr;
 	if (nstr == 0)
@@ -41,15 +43,14 @@ char	*ft_strjoin(char *s1, char *s2)
 		nstr++;
 		s1++;
 	}
-	while (*(s2 + 1) != 0)
+	while (i < c)
 	{
 		*nstr = *s2;
 		if (*(s2) == '\n')
-		{
 			break ;
-		}
 		nstr++;
 		s2++;
+		i++;
 	}
 	*nstr = 0;
 	return (ret);

@@ -6,7 +6,7 @@
 /*   By: pde-souz <pde-souz@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 09:02:22 by pde-souz          #+#    #+#             */
-/*   Updated: 2023/04/19 12:56:48 by pde-souz         ###   ########.fr       */
+/*   Updated: 2023/04/19 13:56:50 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,8 @@
 
 int	count(void)
 {
-	static int	num;
+	static int	num = 0;
 
-	num = 0;
 	num++;
 	return (num);
 }
