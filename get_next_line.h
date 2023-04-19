@@ -6,13 +6,13 @@
 /*   By: pde-souz <pde-souz@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 09:54:14 by pde-souz          #+#    #+#             */
-/*   Updated: 2023/04/19 10:54:47 by pde-souz         ###   ########.fr       */
+/*   Updated: 2023/04/19 12:18:03 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 #define GET_NEXT_LINE_H
-#define BUFFER_SIZE 5
+#define BUFFER_SIZE 1000
 
 #include <stdio.h>
 #include <unistd.h>

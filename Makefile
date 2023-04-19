@@ -36,8 +36,8 @@ fclean: clean
 
 re: fclean all
 
-valgrind: clean fclean all
+valgrind: 
+	valgrind --leak-check=full ./$(NAME)
 	rm -f $(OBJS) $(NAME)
-	valgrind --leak-check=full ./result.out
 
 .PHONY: clean fclean all re
