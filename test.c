@@ -6,7 +6,7 @@
 /*   By: pde-souz <pde-souz@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 09:02:22 by pde-souz          #+#    #+#             */
-/*   Updated: 2023/04/19 13:56:50 by pde-souz         ###   ########.fr       */
+/*   Updated: 2023/04/19 19:20:44 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,10 @@ int	main(void)
 
 	printf("%d\n", count());
 	printf("%d\n", count());
-	fd = open("teste.txt", O_RDONLY);
+	fd = open("teste2.txt", O_RDONLY);
 	line = get_next_line(fd);
 	printf("o fd é %d\n", fd);
 	printf(" line 1 %s\n\n", line);
+	printf("parou\n");
 	free(line);
 }

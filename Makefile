@@ -25,8 +25,8 @@ check:
 run: clean fclean all
 	./$(NAME)
 
-test: all
-	gcc -ggdb $(FLAGS) ft_printf.c $(NAME) -o result.out
+debug:
+	gcc -ggdb $(SRCS) -o $(NAME)
 
 clean:
 	rm -f $(OBJS)

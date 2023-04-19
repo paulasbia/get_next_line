@@ -6,7 +6,7 @@
 /*   By: pde-souz <pde-souz@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 10:23:54 by pde-souz          #+#    #+#             */
-/*   Updated: 2023/04/19 13:54:53 by pde-souz         ###   ########.fr       */
+/*   Updated: 2023/04/19 19:51:42 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_strlen(char *str)
 	{
 		return (0);
 	}
-	while (str[i] != 0 && str[i] != '\n')
+	while (str[i] != 0)
 		i++;
 	return (i);
 }
@@ -33,7 +33,8 @@ char	*ft_strjoin(char *s1, char *s2, int c)
 	int		i;
 
 	i = 0;
-	nstr = (char *)malloc(sizeof(char) * ft_strlen(s1) + ft_strlen(s2) + 1);
+    printf("a len é de %d\n", ft_strlen(s1) + c + 1);
+	nstr = (char *)malloc(sizeof(char) * ft_strlen(s1) + c + 1);
 	ret = nstr;
 	if (nstr == 0)
 		return (NULL);
@@ -46,11 +47,12 @@ char	*ft_strjoin(char *s1, char *s2, int c)
 	while (i < c)
 	{
 		*nstr = *s2;
-		if (*(s2) == '\n')
-			break ;
 		nstr++;
 		s2++;
 		i++;
+        printf("i vale %d\n", i);
+        printf("c vale %d\n", c);
+        printf("o retorno %s\n", ret);
 	}
 	*nstr = 0;
 	return (ret);
