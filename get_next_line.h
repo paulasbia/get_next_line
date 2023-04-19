@@ -1,39 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pde-souz <pde-souz@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/17 09:02:22 by pde-souz          #+#    #+#             */
-/*   Updated: 2023/04/19 11:53:13 by pde-souz         ###   ########.fr       */
+/*   Created: 2023/04/19 09:54:14 by pde-souz          #+#    #+#             */
+/*   Updated: 2023/04/19 10:54:47 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef GET_NEXT_LINE_H
+#define GET_NEXT_LINE_H
+#define BUFFER_SIZE 5
 
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
 #include <fcntl.h>
-#include "get_next_line.h"
 
-int	count(void)
-{
-	static int	num = 0;
+char    *get_next_line(int fd);
+int     ft_strlen(char *str);
+char	*ft_strjoin(char *s1, char *s2);
 
-	num++;
-	return (num);
-}
-
-int	main(void)
-{
-	int		fd;
-	//char	buffer[BUFFER_SIZE];
-
-	printf("%d\n", count());
-	printf("%d\n", count());
-	fd = open("teste.txt", O_RDONLY);
-	printf("o fd é %d\n", fd);
-	//printf("teste de read %ld\n", read(fd, buffer, BUFFER_SIZE));
-	//printf("o buffer é %s\n", buffer);
-	get_next_line(fd);
-}
+#endif
