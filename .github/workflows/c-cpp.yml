@@ -17,3 +17,5 @@ jobs:
       run: make install
     - name: make check
       run: make check
+    - name: valgrind
+      run: make run valgrind
