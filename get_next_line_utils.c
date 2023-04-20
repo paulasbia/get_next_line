@@ -6,7 +6,7 @@
 /*   By: pde-souz <pde-souz@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 10:23:54 by pde-souz          #+#    #+#             */
-/*   Updated: 2023/04/19 19:52:53 by pde-souz         ###   ########.fr       */
+/*   Updated: 2023/04/20 09:45:44 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,4 +52,28 @@ char	*ft_strjoin(char *s1, char *s2, int c)
 	}
 	*nstr = 0;
 	return (ret);
+}
+
+int	ft_find_nl(char *str)
+{
+	int	i;
+	int	j;
+	int	new_line;
+
+	i = 0;
+	j = 0;
+	new_line = 0;
+	while (str[i] != 0 && str[i] != '\n')
+		str[i++] = '\0';
+	if (str[i] == '\n')
+	{
+		new_line = 1;
+		str[i++] = '\0';
+		while (str[i] != 0)
+		{
+			str[j++] = str[i];
+			str[i++] = '\0';
+		}
+	}
+	return (new_line);
 }
