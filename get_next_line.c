@@ -6,7 +6,7 @@
 /*   By: pde-souz <pde-souz@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 09:52:45 by pde-souz          #+#    #+#             */
-/*   Updated: 2023/04/20 10:00:11 by pde-souz         ###   ########.fr       */
+/*   Updated: 2023/04/20 11:14:28 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,12 @@ char	*get_next_line(int fd)
 	static char	buffer[BUFFER_SIZE];
 	int			c;
 
-	c = read(fd, buffer, BUFFER_SIZE);
+	if (fd < 0 || BUFFER_SIZE < 1 || fd > FOPEN_MAX)
+		return (NULL);
 	str = 0;
+	if (ft_find_nl(buffer) > 0)
+		return (str);
+	c = read(fd, buffer, BUFFER_SIZE);
 	printf("teste na gnl \n");
 	while (c > 0)
 	{

@@ -6,7 +6,7 @@
 /*   By: pde-souz <pde-souz@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 10:23:54 by pde-souz          #+#    #+#             */
-/*   Updated: 2023/04/20 10:11:24 by pde-souz         ###   ########.fr       */
+/*   Updated: 2023/04/20 11:18:24 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,9 @@ char	*ft_strjoin(char *s1, char *s2, int c)
 	if (nstr == 0)
 		return (NULL);
 	while (s1 != 0 && s1[i] != 0)
-	{
 		*nstr++ = s1[i++];
-	}
+	if (s1 != 0)
+		free(s1);
 	i = 0;
 	while (i < c)
 	{
@@ -48,7 +48,6 @@ char	*ft_strjoin(char *s1, char *s2, int c)
 		i++;
 	}
 	*nstr = 0;
-	free(s1);
 	return (ret);
 }
 
