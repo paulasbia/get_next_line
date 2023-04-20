@@ -6,7 +6,7 @@
 /*   By: pde-souz <pde-souz@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 10:23:54 by pde-souz          #+#    #+#             */
-/*   Updated: 2023/04/20 11:18:24 by pde-souz         ###   ########.fr       */
+/*   Updated: 2023/04/20 15:47:40 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,18 @@ int	ft_strlen(char *str)
 	return (i);
 }
 
-char	*ft_strjoin(char *s1, char *s2, int c)
+char	*ft_strjoin(char *s1, char *s2)
 {
 	char	*nstr;
 	char	*ret;
 	int		i;
 
+	if (s2[0] == '\0')
+		return (0);
 	i = 0;
-	nstr = (char *)malloc(sizeof(char) * ft_strlen(s1) + c + 1);
+	nstr = (char *)malloc(sizeof(char) * ft_strlen(s1) + ft_strlen(s2) + 1);
+	printf("s1 no strjoin vale: %s\n", s1);
+	printf("s2 no strjoin vale: %s\n", s2);
 	ret = nstr;
 	if (nstr == 0)
 		return (NULL);
@@ -42,13 +46,24 @@ char	*ft_strjoin(char *s1, char *s2, int c)
 	if (s1 != 0)
 		free(s1);
 	i = 0;
-	while (i < c)
+	while (s2 && *s2)
 	{
 		*nstr++ = *s2++;
+		if (*s2 == '\n')
+			break ;
 		i++;
 	}
 	*nstr = 0;
 	return (ret);
+}
+
+void	ft_clean_buffer(char *buffer)
+{
+	int	i;
+
+	i = 0;
+	while (buffer[i])
+		buffer[i++] = 0;
 }
 
 int	ft_find_nl(char *str)
