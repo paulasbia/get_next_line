@@ -3,7 +3,7 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <bsd/string.h>
+#include <string.h>
 #include "unity.h"
 #include "../gnl_with_bonus/get_next_line.h"
 #include "../gnl_with_bonus/get_next_line.h"
