@@ -1,6 +1,6 @@
 NAME = test.out
 
-SRCS =  test.c get_next_line.c get_next_line_utils.c
+SRCS =  get_next_line.c get_next_line_utils.c
 
 OBJS = $(SRCS:.c=.o)
 
@@ -8,6 +8,8 @@ FLAGS = -Wall -Wextra -Werror
 
 %.o: %.c
 	cc $(FLAGS) -c $< -o $@
+
+UNITY_TEST = tests/*.c tests/*.h
 
 all: $(NAME)
 
@@ -21,6 +23,19 @@ install:
 
 check:
 	norminette $(SRCS)
+
+test:
+	gcc -D BUFFER_SIZE=1 -ggdb $(FLAGS) $(UNITY_TEST) $(SRCS) -lbsd -o test.out
+	./test.out
+
+	gcc -D BUFFER_SIZE=42 -ggdb $(FLAGS) $(UNITY_TEST) $(SRCS) -lbsd -o test.out
+	./test.out
+
+	gcc -D BUFFER_SIZE=1000 -ggdb $(FLAGS) $(UNITY_TEST) $(SRCS) -lbsd -o test.out
+	./test.out
+
+	gcc -D BUFFER_SIZE=10000000 -ggdb $(FLAGS) $(UNITY_TEST) $(SRCS) -lbsd -o test.out
+	./test.out
 
 run: clean fclean all
 	./$(NAME)
