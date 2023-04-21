@@ -51,7 +51,7 @@ fclean: clean
 
 re: fclean all
 
-valgrind: run
+valgrind: test
 	valgrind --leak-check=full ./$(NAME)
 	rm -f $(OBJS) $(NAME)
 
