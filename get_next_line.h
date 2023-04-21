@@ -6,7 +6,7 @@
 /*   By: pde-souz <pde-souz@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 09:54:14 by pde-souz          #+#    #+#             */
-/*   Updated: 2023/04/21 10:09:20 by pde-souz         ###   ########.fr       */
+/*   Updated: 2023/04/21 10:27:46 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include <unistd.h>
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 7
+#  define BUFFER_SIZE 42
 # endif
 
 char	*get_next_line(int fd);
