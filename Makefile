@@ -25,16 +25,16 @@ check:
 	norminette $(SRCS)
 
 test:
-	gcc -D BUFFER_SIZE=1 -ggdb $(FLAGS) $(UNITY_TEST) $(SRCS) -lbsd -o test.out
+	gcc -D BUFFER_SIZE=1 -ggdb $(FLAGS) $(UNITY_TEST) $(SRCS) -o test.out
 	./test.out
 
-	gcc -D BUFFER_SIZE=42 -ggdb $(FLAGS) $(UNITY_TEST) $(SRCS) -lbsd -o test.out
+	gcc -D BUFFER_SIZE=42 -ggdb $(FLAGS) $(UNITY_TEST) $(SRCS) -o test.out
 	./test.out
 
-	gcc -D BUFFER_SIZE=1000 -ggdb $(FLAGS) $(UNITY_TEST) $(SRCS) -lbsd -o test.out
+	gcc -D BUFFER_SIZE=1000 -ggdb $(FLAGS) $(UNITY_TEST) $(SRCS) -o test.out
 	./test.out
 
-	gcc -D BUFFER_SIZE=10000000 -ggdb $(FLAGS) $(UNITY_TEST) $(SRCS) -lbsd -o test.out
+	gcc -D BUFFER_SIZE=10000000 -ggdb $(FLAGS) $(UNITY_TEST) $(SRCS) -o test.out
 	./test.out
 
 run: clean fclean all
