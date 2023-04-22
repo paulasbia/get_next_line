@@ -10,6 +10,6 @@
 	<img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/paulasbia/get_next_line?color=brightgreen" />
 </p>
 
-- Actual Status : in progress.
-- Result        : --- %
-- Observations  : in progress.
+- Actual Status : finished.
+- Result        : 125 %
+- Observations  : file gnl_with_bonus is the complet work.
